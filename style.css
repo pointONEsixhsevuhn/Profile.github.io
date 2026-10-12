@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #eef2f5;
+    color: #17232d;
+    min-height: 100vh;
+    padding: 55px 20px;
+    overflow-x: hidden;
+}
+.background-decoration {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(2px);
+}
+.decoration-one {
+    width: 400px;
+    height: 400px;
+    background: rgba(40, 76, 101, 0.07);
+    top: -150px;
+    right: -130px;
+}
+.decoration-two {
+    width: 300px;
+    height: 300px;
+    background: rgba(104, 135, 155, 0.08);
+    bottom: -120px;
+    left: -100px;
+}
+.main-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #cbd5dc;
+    box-shadow: 0 25px 70px rgba(21, 42, 55, 0.12);
+    overflow: hidden;
+    animation: cardAppear 0.8s ease;
+}
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.top-accent {
+    height: 5px;
+    background: linear-gradient(90deg, #172f40, #55778d, #172f40);
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 35px 42px;
+    border-bottom: 1px solid #dbe2e7;
+}
+.profile-photo-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+.photo-ring {
+    width: 105px;
+    height: 105px;
+    padding: 5px;
+    border: 1px solid #9badb9;
+    border-radius: 50%;
+    background: #f7f9fa;
+    box-shadow: 0 8px 20px rgba(24, 47, 62, 0.12);
+}
+.profile-photo,
+.portal-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-photo {
+    object-position: center;
+}
+.online-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 4px;
+    bottom: 7px;
+    background: #527b62;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #71818d;
+    margin-bottom: 5px;
+}
+.header-name h1,
+.intro h2,
+.portal-heading h2,
+.section-heading h3 {
+    font-family: "Playfair Display", serif;
+}
+.header-name h1 {
+    font-size: clamp(25px, 4vw, 37px);
+    color: #172f40;
+    line-height: 1.15;
+}
+.profile-title {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #657580;
+}
+.date-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 42px;
+    background: #f8fafb;
+    border-bottom: 1px solid #dbe2e7;
+    font-size: 13px;
+    color: #647581;
+}
+.date-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.date-icon {
+    font-size: 18px;
+    color: #35566d;
+}
+#dateTime {
+    font-weight: 600;
+    color: #35566d;
+    text-align: right;
+}
+.intro {
+    position: relative;
+    padding: 55px 42px 50px;
+    min-height: 350px;
+    overflow: hidden;
+}
+.intro-decoration {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    height: 45px;
+    margin-bottom: 25px;
+}
+.intro-decoration span {
+    display: block;
+    width: 5px;
+    background: #35566d;
+    transform: rotate(35deg);
+    border-radius: 10px;
+}
+.intro-decoration span:nth-child(1) { height: 35px; }
+.intro-decoration span:nth-child(2) { height: 24px; }
+.intro-decoration span:nth-child(3) { height: 15px; }
+.intro-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #71818d;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.intro h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: #172f40;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+.intro-description {
+    max-width: 680px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5f6f79;
+    margin-bottom: 28px;
+}
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #29485d;
+    background: #29485d;
+    color: white;
+    padding: 13px 20px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: *background* 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.about-button:hover {
+    background: #172f40;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(41, 72, 93, 0.2);
+}
+.button-arrow {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+.about-button.open .button-arrow {
+    transform: rotate(180deg);
+}
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 42px;
+    border-top: 1px solid #dbe2e7;
+    color: #87949d;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.footer-line {
+    height: 1px;
+    flex: 1;
+    background: #d6dfe4;
+}
+.about-portal {
+    display: none;
+    max-width: 900px;
+    margin: 55px auto 0;
+}
+.about-portal.active {
+    display: block;
+    animation: portalOpen 0.6s ease;
+}
+@keyframes portalOpen {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.portal-container {
+    background: #fff;
+    border: 1px solid #cbd5dc;
+    box-shadow: 0 25px 70px rgba(21, 42, 55, 0.1);
+    overflow: hidden;
+}
+.portal-heading {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 45px;
+    background: linear-gradient(135deg, #172f40, #29485d);
+    color: white;
+}
+.portal-photo {
+    width: 120px;
+    height: 120px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.portal-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: 0.65;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+.portal-heading h2 {
+    font-size: clamp(30px, 5vw, 47px);
+    line-height: 1.05;
+}
+.portal-heading h2 span {
+    display: block;
+    color: #b9cad5;
+}
+.portal-role {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #d0dbe1;
+}
+.content-section {
+    padding: 50px 45px;
+    border-bottom: 1px solid #dbe2e7;
+}
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #edf2f5;
+    color: #35566d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+.section-heading h3 {
+    font-size: 30px;
+    color: #172f40;
+    line-height: 1;
+}
+.section-heading p {
+    margin-top: 6px;
+    color: #7b8992;
+    font-size: 13px;
+}
+.details-grid,
+.hobbies-list,
+.contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.detail-card,
+.hobby-item,
+.contact-item {
+    background: #f7f9fa;
+    border: 1px solid #e1e7eb;
+    transition: 0.25s ease;
+}
+.detail-card {
+    padding: 23px;
+}
+.detail-card:hover,
+.hobby-item:hover,
+.contact-item:hover {
+    border-color: #9eb0bc;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(23, 47, 64, 0.07);
+}
+.detail-card span,
+.hobby-label,
+.contact-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #7b8992;
+}
+.detail-card span {
+    margin-bottom: 8px;
+}
+.detail-card strong,
+.hobby-item strong,
+.contact-item strong {
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #253b4a;
+}
+.detail-card strong {
+    font-size: 15px;
+}
+.biography-content {
+    max-width: 760px;
+}
+.biography-content p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #5b6b75;
+    margin-bottom: 17px;
+    text-align: justify;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 17px;
+    border: 1px solid #d7e0e5;
+    background: #f8fafb;
+    color: #29485d;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+.skill-item:hover {
+    background: #29485d;
+    color: white;
+    border-color: #29485d;
+    transform: translateY(-3px);
+}
+.skill-number {
+    font-size: 9px;
+    opacity: 0.55;
+}
+.hobby-item,
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+}
+.hobby-icon,
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #29485d;
+    color: white;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+.hobby-label,
+.contact-label {
+    margin-bottom: 6px;
+}
+.contact-item strong {
+    word-break: break-word;
+}
+.portal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 45px;
+    color: #89969e;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: #f8fafb;
+}
+@media (max-width: 768px) {
+    body {
+        padding: 25px 12px;
+    }
+    .profile-header {
+        padding: 28px 25px;
+    }
+    .date-row {
+        padding: 12px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #dateTime {
+        text-align: left;
+    }
+    .intro {
+        padding: 45px 25px;
+    }
+    .card-footer {
+        padding: 14px 25px;
+    }
+    .portal-heading {
+        padding: 35px 25px;
+    }
+    .content-section {
+        padding: 40px 25px;
+    }
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    .portal-footer {
+        padding: 17px 25px;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        padding: 10px 7px;
+    }
+    .profile-header {
+        gap: 15px;
+        padding: 22px 17px;
+    }
+    .photo-ring {
+        width: 78px;
+        height: 78px;
+    }
+    .online-dot {
+        width: 13px;
+        height: 13px;
+        right: 1px;
+        bottom: 4px;
+    }
+    .eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+    .header-name h1 {
+        font-size: 20px;
+    }
+    .profile-title {
+        font-size: 12px;
+    }
+    .date-row {
+        padding: 12px 17px;
+        font-size: 11px;
+    }
+    .intro {
+        padding: 38px 17px;
+    }
+    .intro h2 {
+        font-size: 31px;
+    }
+    .intro-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    .card-footer {
+        padding: 13px 17px;
+        font-size: 7px;
+    }
+    .portal-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 20px;
+    }
+    .portal-photo {
+        width: 95px;
+        height: 95px;
+    }
+    .portal-heading h2 {
+        font-size: 31px;
+    }
+    .content-section {
+        padding: 35px 18px;
+    }
+    .section-heading h3 {
+        font-size: 25px;
+    }
+    .detail-card {
+        padding: 18px;
+    }
+    .biography-content p {
+        font-size: 14px;
+        text-align: left;
+    }
+    .hobbies-list,
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+    .hobby-item,
+    .contact-item {
+        padding: 17px;
+    }
+    .portal-footer {
+        padding: 15px 18px;
+        font-size: 7px;
+    }
+}
